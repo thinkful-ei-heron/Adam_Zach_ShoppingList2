@@ -45,6 +45,9 @@ function renderShoppingList() {
 
 function handleNewItemSubmit() {
   // this function will be responsible for when users add a new shopping list item
+  // this function will block the default function
+  // this function will take the user submission and push that to the STORE
+  // this function will call the renderShoppingList function to refresh the DOM
   console.log('`handleNewItemSubmit` ran');
 }
 
@@ -52,6 +55,10 @@ function handleNewItemSubmit() {
 function handleItemCheckClicked() {
   // this function will be responsible for when users click the "check" button on
   // a shopping list item.
+  // this function will listen for a click on the check button
+  // this function will use the item ID to locate the target in the STORE
+  // this function will update the entry to invert the checked status
+  // this function will call the renderShoppingList function to refresh the DOM
   console.log('`handleItemCheckClicked` ran');
 }
 
@@ -59,6 +66,10 @@ function handleItemCheckClicked() {
 function handleDeleteItemClicked() {
   // this function will be responsible for when users want to delete a shopping list
   // item
+  // this function will listen for a click on the delete button
+  // this function will use the item ID to locate the target in the STORE
+  // this function will remove the entry from the STORE
+  // this function will call the renderShoppingList function to refresh the DOM
   console.log('`handleDeleteItemClicked` ran')
 }
 

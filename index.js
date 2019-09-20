@@ -83,8 +83,8 @@ function handleItemCheckClicked() {
 
 function deleteForListItem(itemId) {
   console.log("Deleting item with id " + itemId);
-  const item = STORE.find(item => item.id === itemId);
-  STORE.splice(item,1);
+  const itemIndex = STORE.findIndex(item => item.id === itemId);
+  STORE.splice(itemIndex,1);
 }
 
 function handleDeleteItemClicked() {

@@ -62,6 +62,17 @@ function handleNewItemSubmit() {
   });
 }
 
+function toggleCheckedForListItem(itemId) {
+    console.log("Toggling checked property for item with id " + itemId);
+    const item = STORE.find(item => item.id === itemId);
+    item.checked = !item.checked;
+  }
+
+function getItemIdFromElement(item) {
+    return $(item)
+      .closest('li')
+      .data('item-id');
+  }
 
 function handleItemCheckClicked() {
   // this function will be responsible for when users click the "check" button on
@@ -70,7 +81,13 @@ function handleItemCheckClicked() {
   // this function will use the item ID to locate the target in the STORE
   // this function will update the entry to invert the checked status
   // this function will call the renderShoppingList function to refresh the DOM
-  console.log('`handleItemCheckClicked` ran');
+  function handleItemCheckClicked() {
+  $('.js-shopping-list').on('click', `.js-item-toggle`, event => {
+    console.log('`handleItemCheckClicked` ran');
+    const itemId = getItemIdFromElement(event.currentTarget);
+    toggleCheckedForListItem(id);
+    renderShoppingList();
+  });
 }
 
 
